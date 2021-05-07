@@ -1,0 +1,16 @@
+:root {
+    --yellow: #fff000;
+    --cyan: #00ffff;
+    --magenta: #ff00ff;
+    --magenta-light: rgb(255, 120, 255);
+    --cyan-light: rgb(120, 255, 255);
+    --yellow-light: rgb(255,255, 120);
+    --red: #ff0000;
+    --blue: #0000ff;
+    --green: #00ff00;
+}
+
+canvas {
+    border: black solid 1px;
+    
+}
