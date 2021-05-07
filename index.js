@@ -41,17 +41,17 @@ window.onload = () => {
   //A game loop runs every frame, updates objects and postions
   //We cannot use a while true because it relays on the computer's speed.
 
-  function gameLoop(timestamp) {
-
-    let dTime = timestamp - lastTime;
-    lastTime = timestamp
-    //would this work with arrow fn?
-    ctx.clearRect(0,0, GAME_WIDTH, GAME_HEIGHT)
+  function gameLoop(timestamp) { //would this work with arrow fn?
+    let dTime = timestamp - lastTime; //gets difference between last refresh and current refresh = DELTA
+    lastTime = timestamp //updates the last refresh time
+    
+    ctx.clearRect(0,0, GAME_WIDTH, GAME_HEIGHT) 
     paddle.update(dTime)
     paddle.draw(ctx)
 
     requestAnimationFrame(gameLoop) //when the next frame is ready, recurse
+    //requestAnimationFrame will pass the timestamp automatically. 
   }
 
-  gameLoop()
+  gameLoop() //calls the loop, making the paddle move. 
 };
