@@ -1,4 +1,5 @@
 import Paddle from "./components/paddle.js";
+import {InputHandler} from "./components/input.js"
 
 window.onload = () => {
   let canvas = document.getElementById("screen");
@@ -32,6 +33,8 @@ window.onload = () => {
   //CODE ABOVE COMMENTED FOR FUTURE REFERENCE
 
   let paddle = new Paddle(GAME_WIDTH, GAME_HEIGHT);
+
+  new InputHandler(paddle)
 
   paddle.draw(ctx);
 
