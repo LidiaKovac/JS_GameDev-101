@@ -15,3 +15,7 @@ canvas {
     background-color: #343434;
     
 }
+
+img {
+    display: none;
+}

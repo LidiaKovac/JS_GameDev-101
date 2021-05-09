@@ -1,5 +1,6 @@
 import Paddle from "./components/paddle.js";
 import {InputHandler} from "./components/input.js"
+import Ball from "./components/ball.js"
 
 window.onload = () => {
   let canvas = document.getElementById("screen");
@@ -33,17 +34,19 @@ window.onload = () => {
   //CODE ABOVE COMMENTED FOR FUTURE REFERENCE
 
   let paddle = new Paddle(GAME_WIDTH, GAME_HEIGHT);
-
+  let ball = new Ball(GAME_WIDTH, GAME_HEIGHT)
   new InputHandler(paddle)
 
   paddle.draw(ctx);
 
   let lastTime = 0
 
+  
+  
   //to make our game work, we need a game loop.
   //A game loop runs every frame, updates objects and postions
   //We cannot use a while true because it relays on the computer's speed.
-
+  
   function gameLoop(timestamp) { //would this work with arrow fn?
     let dTime = timestamp - lastTime; //gets difference between last refresh and current refresh = DELTA
     lastTime = timestamp //updates the last refresh time
@@ -51,10 +54,13 @@ window.onload = () => {
     ctx.clearRect(0,0, GAME_WIDTH, GAME_HEIGHT) 
     paddle.update(dTime)
     paddle.draw(ctx)
-
+    ball.draw(ctx)
+    ball.update(dTime)
+    
+    
     requestAnimationFrame(gameLoop) //when the next frame is ready, recurse
     //requestAnimationFrame will pass the timestamp automatically. 
   }
 
-  gameLoop() //calls the loop, making the paddle move. 
+  requestAnimationFrame(gameLoop) //calls the loop, making the paddle move. 
 };

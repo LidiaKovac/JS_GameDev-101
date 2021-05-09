@@ -4,7 +4,7 @@ export default class Paddle {
         this.width=100
         this.height=20
 
-        this.maxSpeed = 10
+        this.maxSpeed = 7
         this.speed = 0 //the current speed
 
         this.position = { 
