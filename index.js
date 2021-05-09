@@ -1,6 +1,7 @@
 import Paddle from "./components/paddle.js";
 import {InputHandler} from "./components/input.js"
 import Ball from "./components/ball.js"
+import Game from "./components/game.js";
 
 window.onload = () => {
   let canvas = document.getElementById("screen");
@@ -33,15 +34,11 @@ window.onload = () => {
 
   //CODE ABOVE COMMENTED FOR FUTURE REFERENCE
 
-  let paddle = new Paddle(GAME_WIDTH, GAME_HEIGHT);
-  let ball = new Ball(GAME_WIDTH, GAME_HEIGHT)
-  new InputHandler(paddle)
-
-  paddle.draw(ctx);
 
   let lastTime = 0
 
-  
+  let game = new Game(GAME_WIDTH, GAME_HEIGHT)
+  game.start()
   
   //to make our game work, we need a game loop.
   //A game loop runs every frame, updates objects and postions
@@ -52,10 +49,14 @@ window.onload = () => {
     lastTime = timestamp //updates the last refresh time
     
     ctx.clearRect(0,0, GAME_WIDTH, GAME_HEIGHT) 
-    paddle.update(dTime)
-    paddle.draw(ctx)
-    ball.draw(ctx)
-    ball.update(dTime)
+    
+    game.draw(ctx)
+    game.update(dTime)
+    //CODE BELOW TAKEN OUT IN FAVOUR OF USING THE GAME CLASS
+    // paddle.update(dTime)
+    // paddle.draw(ctx)
+    // ball.draw(ctx)
+    // ball.update(dTime)
     
     
     requestAnimationFrame(gameLoop) //when the next frame is ready, recurse
