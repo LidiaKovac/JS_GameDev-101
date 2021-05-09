@@ -1,6 +1,4 @@
-import Paddle from "./components/paddle.js";
-import {InputHandler} from "./components/input.js"
-import Ball from "./components/ball.js"
+
 import Game from "./components/game.js";
 
 window.onload = () => {
@@ -36,7 +34,7 @@ window.onload = () => {
 
 
   let lastTime = 0
-
+  
   let game = new Game(GAME_WIDTH, GAME_HEIGHT)
   game.start()
   

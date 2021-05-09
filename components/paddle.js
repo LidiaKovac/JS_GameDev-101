@@ -16,7 +16,7 @@ export default class Paddle {
         }
     }
     draw(ctx) {
-        console.log("Drawing paddle")
+        
         ctx.fillStyle = "rgb(255, 120, 255)"
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
