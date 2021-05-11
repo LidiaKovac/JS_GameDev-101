@@ -1,3 +1,5 @@
+import {detectCollision} from "../interactions/collision.js";
+
 export default class Ball {
   constructor(game) {
     this.game = game; //this will allow us to access info about other game objects
@@ -10,7 +12,7 @@ export default class Ball {
     this.height = 20;
 
     this.position = {
-      y: 50,
+      y: 200,
       x: Math.random() * this.gameWidth,
     };
 
@@ -47,15 +49,8 @@ export default class Ball {
       this.speed.y = -this.speed.y;
     }
     //collision with paddle
-    let bottomOfBall = this.position.y + this.height;
-    let topOfPaddle = this.game.paddle.position.y;
-    let leftSideOfPaddle = this.game.paddle.position.x;
-    let rightSideOfPaddle = this.game.paddle.position.x + this.game.paddle.width;
-    if (
-      bottomOfBall >= topOfPaddle &&
-      this.position.x >= leftSideOfPaddle &&
-      this.position.x + this.width <= rightSideOfPaddle
-    ) {
+
+    if (detectCollision(this, this.game.paddle)) {
       this.speed.y = -this.speed.y;
       this.position.y = this.game.paddle.position.y - this.width;
     }
