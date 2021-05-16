@@ -14,4 +14,9 @@ This is the repository for the very basics of game development in vanilla js. I 
 
 The more I work on completing this tutorial the more I see many many applications for the things I am learning, even outside of creating games. I am understanding classes better and I think I am going to implement them waaaaay more into my every-day coding. 
 
+### Final Update!
+
+I completed the basic game. It still has a weird bug where sometimes the bricks will not bounce away the ball or the ball clips with the top of the brick.
+
 Do you have feedback? Do not hesitate! Coding is all about always learning something new!
+
