@@ -17,7 +17,7 @@ export default class Paddle {
     }
     draw(ctx) {
         
-        ctx.fillStyle = "rgb(255, 120, 255)"
+        ctx.fillStyle = "#ffffff"
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
     update(dTime) { //the delta time is the time between updates

@@ -25,6 +25,9 @@ export default class Game {
   update(dTime) {
     this.gameObjects.forEach((obj)=> obj.update(dTime))
     this.gameObjects = this.gameObjects.filter((obj)=> !obj.markedForDeletion)
+    if (this.gameObjects.length <=2) {
+      this.start()
+    }
   }
   draw(ctx) {
     this.gameObjects.forEach((obj)=> obj.draw(ctx))
