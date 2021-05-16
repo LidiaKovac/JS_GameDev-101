@@ -1,4 +1,4 @@
-JavaScript Game Development 101 🧑‍🔬
+### JavaScript Game Development 101 🧑‍🔬
 Hi! My name is Lidia 👋
 
 If you have just stumpled upon this repo while going through my GitHub, welcome! 
@@ -17,6 +17,6 @@ The more I work on completing this tutorial the more I see many many application
 ### Final Update!
 
 I completed the basic game. It still has a weird bug where sometimes the bricks will not bounce away the ball or the ball clips with the top of the brick.
+I am also trying to add lives so that if you hit the bottom wall 3 times, you die. 
 
 Do you have feedback? Do not hesitate! Coding is all about always learning something new!
-
