@@ -1,4 +1,4 @@
-JavaScript Game Development 101 🧑‍🔬
+### JavaScript Game Development 101 🧑‍🔬
 Hi! My name is Lidia 👋
 
 If you have just stumpled upon this repo while going through my GitHub, welcome! 
